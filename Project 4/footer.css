@@ -1,0 +1,29 @@
+/* footer start */
+    footer p {
+        color: rgba(255,255,255,.5);
+    }
+    #foot {
+        display: grid;
+        grid-template-rows: auto 15%;
+        margin-bottom: 10px;
+      }
+  @media only screen and (min-width:481px){
+    footer {
+        padding:0 15vw;
+      }
+    #footCont{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #footCont img {
+        height: 100px;
+    }
+  }
+  @media only screen and (max-width: 480px){
+    #footCont img {
+        height: 70px;
+    }
+    }
+/* footer end */
