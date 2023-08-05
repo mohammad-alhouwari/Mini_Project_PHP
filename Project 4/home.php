@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="  scroll-behavior: smooth;">
+<html lang="en">
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
