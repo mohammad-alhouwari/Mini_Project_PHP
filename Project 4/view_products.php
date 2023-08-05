@@ -21,7 +21,7 @@
   if (empty($items)) {
     echo '<p>No items have been added yet.</p>';
 } else {
-  echo'<h1>All Products</h1>';
+  echo'<h1 id="ITEMS">All Products</h1>';
   echo '<div class="cards-container">';
   foreach ($items as $item) {
     echo '<div class="card">';
