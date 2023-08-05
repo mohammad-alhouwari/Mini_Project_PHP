@@ -16,7 +16,7 @@
       <div>
         <div class="col text-center">
           <!-- Copyright -->
-          <p>&copy; 2023 Your Company. All rights reserved.</p>
+          <p>&copy; 2023 plush toys. All rights reserved.</p>
         </div>
       </div>
     </div>

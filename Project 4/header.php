@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="./header.css">
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="background-color: #9A208C!important;">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="background-color: #9A208C!important;">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="home.php">
     <img src="../image/LOGO_TOYS.png" alt="logo" style="width:40px;">
   </a>
 
@@ -20,7 +20,7 @@
         <a class="nav-link" href="#ITEMS">ITEMS</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#FOOTER">FOOTER</a>
+        <a class="nav-link" href="#foot">FOOTER</a>
       </li>
     </ul>
   </div>

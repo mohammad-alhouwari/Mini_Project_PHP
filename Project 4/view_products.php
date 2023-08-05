@@ -8,40 +8,33 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./view_products.css">
 
   </head>
   
   <body>
-  <?php include('./header.php') ?>
   <span id="TOP"></span>
-<br>
-<br>
-<div id="mainP">
-  <h1><b>Plush toys</b></h1>
-  <P>Welcome to our plush toys store, where cuddly dreams come true! We offer a delightful collection of adorable plushies that are sure to melt your heart. From lovable teddy bears to enchanting animal companions, our store boasts a wide variety of soft and huggable friends for all ages. Each plush toy is crafted with the utmost care, ensuring premium quality and ultimate comfort. Whether you're looking for a cherished gift or a companion to snuggle with, our plush toys store is the perfect destination for spreading joy, love, and warmth. Come and explore the magic of our cuddly world today! 🧸💕</P>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <?php include('./header.php') ?>
+  <br><br>
+  <?php
+  include 'products.php';
+  if (empty($items)) {
+    echo '<p>No items have been added yet.</p>';
+} else {
+  echo'<h1>All Products</h1>';
+  echo '<div class="cards-container">';
+  foreach ($items as $item) {
+    echo '<div class="card">';
+    echo '<img src="' . $item['item_image'] . '" alt="' . $item['item_name'] . '">';
+    echo '<h2>' . $item['item_name'] . '</h2>';
+    echo '<p>' . $item['item_details'] . '</p>';
+    echo '<p class="date">Date: ' . $item['item_date'] . '</p>';
+    echo '</div>';
+}
+echo '</div>';
+}
+?>
+  <br><br><br><br><br><br><br><br><br><br><br>
   <?php include('./footer.php') ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

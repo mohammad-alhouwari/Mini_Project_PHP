@@ -1,0 +1,72 @@
+/* button start */
+#ALLproducts input[type="submit"] {
+  background-color: #E11299;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#ALLproducts input[type="submit"]:hover {
+  background-color: #E11299;
+  box-shadow: #FFFFFF 0 0px 2px ;
+}
+/* button end */
+
+
+/* table start */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  tbody img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+ th {
+    background-color: #9A208C;
+    color: white;
+    padding: 15px;
+    text-align: center;
+  }
+  tbody tr:hover {
+    background-color: #E11299;
+    border: 1px solid #F5C6EC;
+    color: white;
+  }
+  
+  tbody td {
+    border: 1px solid white;
+    padding: 15px;
+    overflow-x:scroll;
+  }
+  
+  tbody td:first-child {
+    border-left: none;
+  }
+  
+  tbody td:last-child {
+    border-right: none;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  @media only screen and (max-width: 480px){
+    tbody td{
+      font-size: x-small;
+      padding: 3px;
+    }
+    tbody th{
+      font-size: x-small;
+    }
+    tbody img {
+      max-width: 50px;
+      max-height: 50px;
+    }
+    }
+  /*  */
+  

@@ -1,0 +1,66 @@
+
+body{
+    background-color: #FFEAEA;
+    text-align: center;
+}
+h1,h2{
+    color: #E11299;
+}
+/* ADDform start */  
+
+#ADDform {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #9A208C;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#ADDform label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+#ADDform input[type="text"],
+#ADDform textarea,
+#ADDform input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #E11299;
+  border-radius: 5px;
+}
+
+#ADDform input[type="checkbox"] {
+  margin-bottom: 10px;
+}
+
+#ADDform input[type="submit"] {
+  background-color: #E11299;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#ADDform input[type="submit"]:hover {
+  background-color: #E11299;
+  box-shadow: #FFFFFF 0 0px 2px ;
+}
+/* ADDform end */
+@media screen and (min-width: 768px) {
+    #mainP{
+      padding:0 15vw;
+    }
+  }
+  @media only screen and (max-width: 480px){
+    #ADDform {
+      width: 95vw;
+    }
+    #mainP p {
+      width: 90vw;
+      margin: auto;
+    }
+  }
