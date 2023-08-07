@@ -1,26 +1,28 @@
 <?php
-// Get the submitted form data.
-$item_name = $_POST['item_name'];
-$item_details = $_POST['item_details'];
-$item_date = $_POST['item_date'];
-$is_active = isset($_POST['is_active']);
-$item_image = $_POST['item_image']; // The fixed image URL
+session_start();
 
-// Include a PHP file with an array of added items.
-include 'products.php';
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $item_name = $_POST["item_name"];
+    $item_details = $_POST["item_details"];
+    $item_date = $_POST["item_date"];
+    $item_image = $_POST["item_image"];
+    $is_active = isset($_POST["is_active"]) ? true : false;
 
-// Add the new item to the array.
-$items[] = [
-    'item_name' => $item_name,
-    'item_details' => $item_details,
-    'item_date' => $item_date,
-    'is_active' => $is_active,
-    'item_image' => $item_image, // Save the fixed image URL
-];
+    $new_item = array(
+        "item_name" => $item_name,
+        "item_details" => $item_details,
+        "item_date" => $item_date,
+        "item_image" => $item_image,
+        "is_active" => $is_active
+    );
 
-// Save the updated array back to the file.
-file_put_contents('products.php', '<?php $items = ' . var_export($items, true) . ';');
+    if (!isset($_SESSION["items"])) {
+        $_SESSION["items"] = array();
+    }
 
-header('Location: home.php');
-exit();
+    $_SESSION["items"][] = $new_item;
+
+    header("Location: home.php");
+    exit();
+}
 ?>

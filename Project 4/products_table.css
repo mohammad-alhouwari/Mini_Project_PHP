@@ -41,7 +41,6 @@ table {
   tbody td {
     border: 1px solid white;
     padding: 15px;
-    overflow-x:scroll;
   }
   
   tbody td:first-child {
@@ -59,6 +58,7 @@ table {
     tbody td{
       font-size: x-small;
       padding: 3px;
+      overflow-x:scroll;
     }
     tbody th{
       font-size: x-small;

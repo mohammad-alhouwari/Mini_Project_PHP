@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -16,24 +19,24 @@
   <span id="TOP"></span>
   <?php include('./header.php') ?>
   <br><br>
+
   <?php
-  include 'products.php';
-  if (empty($items)) {
-    echo '<p>No items have been added yet.</p>';
-} else {
-  echo'<h1 id="ITEMS">All Products</h1>';
-  echo '<div class="cards-container">';
-  foreach ($items as $item) {
-    echo '<div class="card">';
-    echo '<img src="' . $item['item_image'] . '" alt="' . $item['item_name'] . '">';
-    echo '<h2>' . $item['item_name'] . '</h2>';
-    echo '<p>' . $item['item_details'] . '</p>';
-    echo '<p class="date">Date: ' . $item['item_date'] . '</p>';
-    echo '</div>';
-}
-echo '</div>';
-}
-?>
+    if (isset($_SESSION["items"])) {
+      echo '<div class="cards-container">';
+        foreach ($_SESSION["items"] as $item) {
+            echo '<div class="card">';
+            echo '<img src="' . htmlspecialchars($item["item_image"]) . '" alt="' . htmlspecialchars($item["item_name"]) . '">';
+            echo '<h3>' . htmlspecialchars($item["item_name"]) . '</h3>';
+            echo '<p>' . htmlspecialchars($item["item_details"]) . '</p>';
+            echo '<p>Date: ' . htmlspecialchars($item["item_date"]) . '</p>';
+            echo '<p>Is Active: ' . ($item["is_active"] ? "Yes" : "No") . '</p>';
+            echo '</div>';
+        }
+
+    } else {
+        echo '<p>No items added yet.</p>';
+    }
+    ?>
   <br><br><br><br><br><br><br><br><br><br><br>
   <?php include('./footer.php') ?>
     <!-- Optional JavaScript -->

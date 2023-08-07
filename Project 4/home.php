@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,7 +17,7 @@
   
   <body>
     <span id="TOP"></span>
-  <?php include('./header.php') ?>
+  <?php include('./header.php')?>
 <br>
 <br>
 <div id="mainP">
@@ -26,7 +29,7 @@
 <br>
 <h2>Add Items to Store</h2>
 <br>
-<form action="process_products.php" method="post" enctype="multipart/form-data" id="ADDform">
+<form action="test.php" method="post" enctype="multipart/form-data" id="ADDform">
         <label for="item_name">Item Name:</label>
         <input type="text" id="item_name" name="item_name" required><br>
 
@@ -52,11 +55,13 @@
     <h2 id="ITEMS">Added Items</h2>
     <br>
     <?php
-    include 'products.php';
 
-    if (empty($items)) {
-      echo '<p>No items have been added yet.</p>';
-  } else {
+
+
+
+
+
+    if (isset($_SESSION["items"])) {
      echo '<link rel="stylesheet" href="./products_table.css">';
      echo '<form action="view_products.php" id="ALLproducts"><input type="submit" value="view products" /></form><br>';
       echo '<table id="products_list">';
@@ -67,17 +72,100 @@
               <th>Is Active</th>
               <th>Item Image</th>
           </tr>';
-      foreach ($items as $item) {
-          echo '<tr>';
-          echo '<td>' . htmlspecialchars($item['item_name']) . '</td>';
-          echo '<td>' . htmlspecialchars($item['item_details']) . '</td>';
-          echo '<td>' . htmlspecialchars($item['item_date']) . '</td>';
-          echo '<td>' . ($item['is_active'] ? 'Yes' : 'No') . '</td>';
-          echo '<td><img src="' . htmlspecialchars($item['item_image']) . '" alt="Item Image"></td>';
-          echo '</tr>';
-      }
-      echo '</table>';
-  }
+        
+            foreach ($_SESSION["items"] as $item) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($item["item_name"]) . "</td>";
+                echo "<td>" . htmlspecialchars($item["item_details"]) . "</td>";
+                echo "<td>" . htmlspecialchars($item["item_date"]) . "</td>";
+                echo "<td>" . ($item["is_active"] ? "Yes" : "No") . "</td>";
+                echo "<td><img src='" . htmlspecialchars($item["item_image"]) . "' alt='" . htmlspecialchars($item["item_name"]) . "'></td>";
+                echo "</tr>";
+              }
+              echo'</table>';
+        }
+        else{
+          echo '<p>No items have been added yet.</p>';
+        }
+        
+      ?>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php
+  //   include 'products.php';
+
+  //   if (empty($items)) {
+  //     echo '<p>No items have been added yet.</p>';
+  // } else {
+  //    echo '<link rel="stylesheet" href="./products_table.css">';
+  //    echo '<form action="view_products.php" id="ALLproducts"><input type="submit" value="view products" /></form><br>';
+  //     echo '<table id="products_list">';
+  //     echo '<tr>
+  //             <th>Item Name</th>
+  //             <th>Item Details</th>
+  //             <th>Item Date</th>
+  //             <th>Is Active</th>
+  //             <th>Item Image</th>
+  //         </tr>';
+  //     foreach ($items as $item) {
+  //         echo '<tr>';
+  //         echo '<td>' . htmlspecialchars($item['item_name']) . '</td>';
+  //         echo '<td>' . htmlspecialchars($item['item_details']) . '</td>';
+  //         echo '<td>' . htmlspecialchars($item['item_date']) . '</td>';
+  //         echo '<td>' . ($item['is_active'] ? 'Yes' : 'No') . '</td>';
+  //         echo '<td><img src="' . htmlspecialchars($item['item_image']) . '" alt="Item Image"></td>';
+  //         echo '</tr>';
+  //     }
+  //     echo '</table>';
+  // }
   ?>
 
 
