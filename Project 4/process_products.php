@@ -7,7 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $item_date = $_POST["item_date"];
     $item_image = $_POST["item_image"];
     $is_active = isset($_POST["is_active"]) ? true : false;
-
     $new_item = array(
         "item_name" => $item_name,
         "item_details" => $item_details,

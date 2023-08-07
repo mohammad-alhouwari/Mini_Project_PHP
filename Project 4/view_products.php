@@ -25,10 +25,10 @@ session_start();
       echo '<div class="cards-container">';
         foreach ($_SESSION["items"] as $item) {
             echo '<div class="card">';
-            echo '<img src="' . htmlspecialchars($item["item_image"]) . '" alt="' . htmlspecialchars($item["item_name"]) . '">';
-            echo '<h3>' . htmlspecialchars($item["item_name"]) . '</h3>';
-            echo '<p>' . htmlspecialchars($item["item_details"]) . '</p>';
-            echo '<p>Date: ' . htmlspecialchars($item["item_date"]) . '</p>';
+            echo '<img src="' .$item["item_image"] . '" alt="' . htmlspecialchars($item["item_name"]) . '">';
+            echo '<h3>' . $item["item_name"] . '</h3>';
+            echo '<p>' . $item["item_details"] . '</p>';
+            echo '<p>Date: ' . $item["item_date"] . '</p>';
             echo '<p>Is Active: ' . ($item["is_active"] ? "Yes" : "No") . '</p>';
             echo '</div>';
         }
